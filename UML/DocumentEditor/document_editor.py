@@ -6,7 +6,6 @@ Create Date: 4/18/21
 
 # coding: utf-8
 import datetime
-from typing import List
 
 
 class DocumentEditor:
@@ -27,7 +26,8 @@ class DocumentEditor:
     def edit_doc(self):
         selected_doc = self.__doc_ls[self.__doc_pointer]
         print(f"prepare to edit {selected_doc} with {self.__product_name}")
-        selected_doc.edit_page()
+        selected_doc.edit_page()  # for demo
+        # logic for editing
 
 
 class Document:
@@ -56,6 +56,9 @@ class Document:
         print(f"prepare to edit {selected_page} in {self.__id}")
         selected_page.edit()
 
+    def delete_page(self):
+        print(f"prepare to delete {self.__id}")
+
 
 class Page:
     __page_idx = 0
@@ -69,6 +72,7 @@ class Page:
 
     def edit(self):
         print(f"prepare to edit {self.__id}")
+        toolkit = Toolkit()
 
     def copy(self):
         print(f"prepare to copy {self.__id}")
