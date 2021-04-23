@@ -56,7 +56,7 @@ class Document:
         print(f"prepare to edit {selected_page} in {self.__id}")
         selected_page.edit()
 
-    def delete_page(self):
+    def discard(self):
         print(f"prepare to delete {self.__id}")
 
 
@@ -78,12 +78,11 @@ class Page:
         print(f"prepare to copy {self.__id}")
 
     def delete(self):
-        print(f"prepare to delete {self.__id}")
+        print(f"prepare to delete page {self.__id}")
 
 
 class Toolkit:
     def __init__(self):
-        self.__id = ''
         self.__name = ''
 
         self.__text = TextObject()
@@ -144,15 +143,15 @@ class GeometricalObject:
     def set_position(self):
         pass
 
+    def remove(self):
+        pass
+
 
 class Circle(GeometricalObject):
     def __init__(self):
         super().__init__()
 
     def set_area(self):
-        pass
-
-    def remove(self):
         pass
 
 
@@ -163,9 +162,6 @@ class Rectangle(GeometricalObject):
     def set_area(self):
         pass
 
-    def remove(self):
-        pass
-
 
 class Line(GeometricalObject):
     def __init__(self):
@@ -174,11 +170,9 @@ class Line(GeometricalObject):
     def set_length(self):
         pass
 
-    def remove(self):
-        pass
-
 
 if __name__ == '__main__':
     de = DocumentEditor()
     de.new_doc()
     de.edit_doc()
+    print(dir())
