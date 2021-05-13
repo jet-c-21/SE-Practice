@@ -13,6 +13,7 @@ class Drink:
         Drink.company = s
         # self.__class__.company = s
 
+
 class Vodka(Drink):
 
     def __init__(self, price, volume, alcohol_content):
